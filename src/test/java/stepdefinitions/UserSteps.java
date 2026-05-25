@@ -1,6 +1,7 @@
 package stepdefinitions;
 
 import base.BaseTest;
+import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 import endpoints.Routes;
 import io.cucumber.java.en.*;
 import io.restassured.response.Response;
@@ -58,6 +59,13 @@ public class UserSteps {
                         .body(payload)
                         .when()
                         .post(Routes.CREATE_OBJECT);
+
+        ExtentCucumberAdapter.addTestStepLog(
+                "<b>RESPONSE</b><pre>" +
+                        response.getBody().asPrettyString() +
+                        "</pre>"
+
+        );
 
         ExtentTestManager.getTest().info(
                 "<b>RESPONSE</b><pre>" +
