@@ -15,7 +15,7 @@ import io.cucumber.testng.CucumberOptions;
                 "json:target/cucumber.json",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
         },
-        tags = "@CreateObject",
+        tags = "@Object",
         monochrome = true
 )
 
